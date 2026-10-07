@@ -262,3 +262,6 @@ tests/
 real_robot/core
 
 docker/env
+### Real teleop collection: recorded datasets ###
+real_teleop_collection/yellow_light*/
+real_teleop_collection/white_light*/
