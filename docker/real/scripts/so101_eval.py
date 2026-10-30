@@ -111,7 +111,7 @@ class So100Adapter:
             "gripper.pos",
         ]
 
-        self.camera_keys = ["front", "wrist"]
+        self.camera_keys = ["ego", "external_D455"]
 
     # -------------------------------------------------------------------------
     # Observation → Model Input

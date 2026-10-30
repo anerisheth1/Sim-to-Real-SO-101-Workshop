@@ -42,7 +42,7 @@ RUN $PYTHON -m pip install -c /tmp/constraints.txt \
     "feetech-servo-sdk>=1.0.0,<2.0.0"
 
 RUN curl --proto "=https" --tlsv1.2 -sSf -L -o /tmp/ffmpeg.tar.xz \
-    https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-linux64-lgpl-shared-7.1.tar.xz && \
+    https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n8.1-latest-linux64-lgpl-shared-8.1.tar.xz && \
     tar -xf /tmp/ffmpeg.tar.xz -C /usr/local --strip-components=1 && \
     ldconfig && \
     rm /tmp/ffmpeg.tar.xz

@@ -43,6 +43,15 @@ class MsgSerializer:
             return ModalityConfig(**obj["as_json"])
         if "__ndarray_class__" in obj:
             return np.load(io.BytesIO(obj["as_npy"]), allow_pickle=False)
+        # The N1.7 policy server (Isaac-GR00T) serializes response ndarrays
+        # with msgpack_numpy instead of our __ndarray_class__ marker; decode
+        # that wire format too so action_chunk values come back as ndarrays
+        # rather than raw dicts. Only plain numeric dtypes are handled since
+        # that's all GR00T actions ever contain.
+        if obj.get(b"nd") is True and obj.get(b"kind") in (b"", None):
+            return np.frombuffer(obj[b"data"], dtype=np.dtype(obj[b"type"])).reshape(
+                obj[b"shape"]
+            )
         return obj
 
     @staticmethod

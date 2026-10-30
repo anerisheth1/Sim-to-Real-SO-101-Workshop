@@ -3,5 +3,5 @@ export TELEOP_PORT=/dev/ttyACM1
 export ROBOT_PORT=/dev/ttyACM0
 export TELEOP_ID=orange_teleop
 export ROBOT_ID=orange_robot
-export CAMERA_GRIPPER=0
-export CAMERA_EXTERNAL=4
+export CAMERA_GRIPPER=/dev/v4l/by-id/usb-Sonix_Technology_Co.__Ltd._USB2.0_CAM1_USB2.0_CAM1-video-index0
+export CAMERA_EXTERNAL=0
